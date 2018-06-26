@@ -6,7 +6,13 @@ namespace PowerbiAvailableTrialUsage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var pbi = new Powerbi();
+
+            var result = pbi.TryGetAvailableFeaturesAsync();
+            result.Wait();
+
+            Console.WriteLine(result.Result);
+            Console.ReadLine();
         }
     }
 }
